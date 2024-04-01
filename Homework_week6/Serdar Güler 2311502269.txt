@@ -1,0 +1,38 @@
+public class MyClass {
+
+	    public String ad;
+	    public String soyad;
+	    public String univ;
+	    public String dept;
+	    public String sacRengi;
+	    public double boy;
+	    public double kilo;
+	    public boolean hasBeard;
+	    
+}
+public class Sinif {
+
+	public static void main(String[] args) {
+		
+		MyClass class1 = new MyClass();
+		class1.ad = "Serdar";
+		class1.soyad = "Guler";
+		class1.univ = "BANU";
+		class1.dept = "Bilgisayar Mühendisligi";
+		class1.sacRengi ="Siyah";
+		class1.boy = 177;
+		class1.kilo = 67;
+		class1.hasBeard = true;
+		
+		System.out.println("Ad: "+class1.ad);
+		System.out.println("Soyad: "+class1.soyad);
+		System.out.println("Universty: "+ class1.univ);
+		System.out.println("Bolumu: "+ class1.dept);
+		System.out.println("Boy: "+ class1.boy);
+		System.out.println("Kilo: "+class1.kilo);
+		System.out.println("Sakal: "+class1.hasBeard);
+		
+		
+	}
+
+}
