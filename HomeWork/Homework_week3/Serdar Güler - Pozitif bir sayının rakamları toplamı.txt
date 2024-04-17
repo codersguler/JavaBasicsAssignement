@@ -1,0 +1,28 @@
+// Pozitif bir sayının rakamları toplamı 
+import java.util.Scanner;
+
+public class RakamToplami {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.print("Pozitif bir tamsayı girin: ");
+		int sayı = scanner.nextInt();
+
+		if (sayı < 0) {
+			System.out.println("Negatif bir sayı girdiniz. Pozitif bir tamsayı giriniz.");
+			return;
+		}
+
+		int toplam = 0;
+		int orijinalSayı = sayı;
+
+		while (sayı != 0) {
+			int rakam = sayı % 10;
+			toplam += rakam;
+			sayı /= 10;
+		}
+
+		System.out.println("Girilen sayının rakamlarının toplamı: " + toplam);
+
+	}
+}
