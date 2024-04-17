@@ -1,0 +1,43 @@
+//Dizide eleman arama
+
+import java.util.Scanner;
+
+public class DiziElemanArama {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Dizinin boyutunu girin: ");
+        int boyut = scanner.nextInt();
+
+        int[] dizi = new int[boyut];
+
+        System.out.println("Dizi elemanlarını girin:");
+        for (int i = 0; i < boyut; i++) {
+            System.out.print("Eleman " + (i + 1) + ": ");
+            dizi[i] = scanner.nextInt();
+        }
+
+        System.out.print("Aranacak öğeyi girin: ");
+        int hedef = scanner.nextInt();
+
+        int sonucIndex = dogrusalArama(dizi, hedef);
+
+        if (sonucIndex != -1) {
+            System.out.println("Öğe bulundu, indeks: " + (sonucIndex+1));
+        } else {
+            System.out.println("Öğe bulunamadı.");
+        }
+
+        scanner.close();
+    }
+
+    public static int dogrusalArama(int[] dizi, int hedef) {
+        int n = dizi.length;
+        for (int i = 0; i < n; i++) {
+            if (dizi[i] == hedef) {
+                return i; 
+            }
+        }
+        return -1; 
+    }
+}
