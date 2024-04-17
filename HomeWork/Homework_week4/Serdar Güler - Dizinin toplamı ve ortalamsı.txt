@@ -1,0 +1,32 @@
+// Dizinin toplamı ve ortalamsı
+
+import java.util.Scanner;
+
+public class DiziToplamOrtalama {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.print("Dizinin boyutunu girin: ");
+		int boyut = scanner.nextInt();
+
+		int[] dizi = new int[boyut];
+
+		System.out.println("Dizi elemanlarını girin:");
+		for (int i = 0; i < boyut; i++) {
+			System.out.print("Eleman " + (i + 1) + ": ");
+			dizi[i] = scanner.nextInt();
+		}
+
+		int toplam = 0;
+
+		for (int eleman : dizi) {
+			toplam += eleman;
+		}
+
+		double ortalama = (double) toplam / boyut;
+
+		System.out.println("Dizi elemanlarının toplamı: " + toplam);
+		System.out.println("Dizi elemanlarının ortalaması: " + ortalama);
+
+	}
+}
