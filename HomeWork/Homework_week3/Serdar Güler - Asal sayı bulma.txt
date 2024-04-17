@@ -1,0 +1,32 @@
+// Asal sayı bulma
+
+import java.util.Scanner;
+
+public class AsalSayiBulma {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        boolean asalMi = true; // 
+
+        System.out.println("****ASAL BULMA UYGULAMASINA HOŞ GELDİNİZ****");
+        System.out.print("Lütfen bir sayı girin...");
+
+        System.out.println();
+        int sayi = scanner.nextInt();
+
+
+        for (int i = 2; i < sayi; i++) {
+            if (sayi % i == 0) {
+                asalMi = false;
+                break;
+            }
+            
+        }
+
+        if (asalMi && sayi > 1) {
+            System.out.println("Girdiğiniz " + sayi + " sayısı asaldır.");
+        } else {
+            System.out.println("Girdiğiniz " + sayi + " sayısı asal değilidir.");
+        }
+    }
+}
