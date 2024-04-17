@@ -1,0 +1,92 @@
+// İki matrisin toplamı ve çarpımı 
+import java.util.Scanner;
+
+public class MatrisIslemleri {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("1. matrisin boyutlarını girin:");
+        System.out.print("Satır sayısı: ");
+        int satir1 = scanner.nextInt();
+        System.out.print("Sütun sayısı: ");
+        int sutun1 = scanner.nextInt();
+
+        System.out.println("2. matrisin boyutlarını girin:");
+        System.out.print("Satır sayısı: ");
+        int satir2 = scanner.nextInt();
+        System.out.print("Sütun sayısı: ");
+        int sutun2 = scanner.nextInt();
+
+        int[][] matris1 = new int[satir1][sutun1];
+        int[][] matris2 = new int[satir2][sutun2];
+
+        System.out.println("1. matrisin elemanlarını girin:");
+        matrisDoldur(matris1, scanner);
+
+        System.out.println("2. matrisin elemanlarını girin:");
+        matrisDoldur(matris2, scanner);
+
+        if (satir1 == satir2 && sutun1 == sutun2) {
+            int[][] toplam = matrisToplami(matris1, matris2);
+            System.out.println("Matrislerin Toplamı:");
+            matrisYazdir(toplam);
+        } else {
+            System.out.println("Matrislerin boyutları farklı olduğu için toplamı hesaplayamazsınız.");
+        }
+
+        if (sutun1 == satir2) {
+            int[][] carpim = matrisCarpimi(matris1, matris2);
+            System.out.println("Matrislerin Çarpımı:");
+            matrisYazdir(carpim);
+        } else {
+            System.out.println("Matrislerin çarpımı için uygun boyutlara sahip değiller.");
+        }
+
+        scanner.close();
+    }
+
+    public static void matrisDoldur(int[][] matris, Scanner scanner) {
+        for (int i = 0; i < matris.length; i++) {
+            for (int j = 0; j < matris[0].length; j++) {
+                System.out.print("Eleman[" + i + "][" + j + "]: ");
+                matris[i][j] = scanner.nextInt();
+            }
+        }
+    }
+
+    public static int[][] matrisToplami(int[][] matris1, int[][] matris2) {
+        int satir = matris1.length;
+        int sutun = matris1[0].length;
+        int[][] toplam = new int[satir][sutun];
+        for (int i = 0; i < satir; i++) {
+            for (int j = 0; j < sutun; j++) {
+                toplam[i][j] = matris1[i][j] + matris2[i][j];
+            }
+        }
+        return toplam;
+    }
+
+    public static int[][] matrisCarpimi(int[][] matris1, int[][] matris2) {
+        int satir1 = matris1.length;
+        int sutun1 = matris1[0].length;
+        int sutun2 = matris2[0].length;
+        int[][] carpim = new int[satir1][sutun2];
+        for (int i = 0; i < satir1; i++) {
+            for (int j = 0; j < sutun2; j++) {
+                for (int k = 0; k < sutun1; k++) {
+                    carpim[i][j] += matris1[i][k] * matris2[k][j];
+                }
+            }
+        }
+        return carpim;
+    }
+
+    public static void matrisYazdir(int[][] matris) {
+        for (int i = 0; i < matris.length; i++) {
+            for (int j = 0; j < matris[0].length; j++) {
+                System.out.print(matris[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
+}
