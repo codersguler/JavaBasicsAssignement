@@ -1,0 +1,25 @@
+// Polindromik kelime
+
+import java.util.Scanner;
+
+public class PalindromKelime {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Lütfen bir kelime giriniz: ");
+		String str = scanner.next();
+		
+		String  tmp="";
+		for(int i= str.length()-1;i>=0;i--) {
+			tmp += str.charAt(i);
+		}
+		if (tmp.equals(str)) {
+			System.out.println("Girilen kelime polindromik");
+		}else {
+			System.out.println("Girilen kelime polindromik değildir.");
+		}
+		
+	}
+
+}
+
