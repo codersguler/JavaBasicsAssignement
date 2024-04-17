@@ -1,0 +1,36 @@
+// Hesap makinesi
+import java.util.Scanner;
+
+public class Calculator {
+
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("ilk sayıyı girin: ");
+		int sayi1 = scanner.nextInt();
+
+		System.out.println("ikinci sayıyı girin: ");
+		int sayi2 = scanner.nextInt();
+
+		System.out.println("\nLütfen yapmak istediğiniz işlemi seçin:");
+		System.out.println("1-Toplama\n2-Çıkarma\n3Çarpma\n4-Bölme");
+		int secim = scanner.nextInt();
+
+		if (secim == 1) {
+			System.out.println("a+b: " + (sayi1 + sayi2));
+		} else if (secim == 2) {
+			System.out.println("a-b: " + (sayi1 - sayi2));
+		} else if (secim == 3) {
+			System.out.println("a*b: " + (sayi1 * sayi2));
+
+		} else if (secim == 4) {
+			System.out.println("a/b: " + (sayi1 / sayi2));
+
+		} else {
+			System.out.println("Geçersiz işlem seçtiniz...");
+		}
+
+	}
+
+}
+
