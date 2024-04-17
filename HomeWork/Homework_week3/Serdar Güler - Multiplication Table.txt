@@ -1,0 +1,18 @@
+// Bir sayının çarpım tablosu
+
+import java.util.Scanner;
+
+public class CarpimTablosu {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Bir sayı girin: ");
+        int sayı = scanner.nextInt();
+
+        System.out.println(sayı + " sayısının çarpım tablosu:");
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(sayı + " x " + i + " = " + (sayı * i));
+        }
+
+    }
+}
