@@ -1,0 +1,27 @@
+// String tersine çevirme
+import java.util.Scanner;
+
+public class TersCevirici {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.print("Bir string girin: ");
+		String input = scanner.nextLine();
+
+		String tersCevrilmis = stringiTersCevir(input);
+
+		System.out.println("Ters çevrilmiş string: " + tersCevrilmis);
+
+	}
+
+	public static String stringiTersCevir(String str) {
+
+		String tersCevrilmis = "";
+
+		for (int i = str.length() - 1; i >= 0; i--) {
+			tersCevrilmis += str.charAt(i);
+		}
+
+		return tersCevrilmis;
+	}
+}
